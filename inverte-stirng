@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class InverteStringSemReverse {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite uma string: ");
+        String entrada = scanner.nextLine();
+
+        char[] chars = entrada.toCharArray();
+        int tamanho = chars.length;
+
+        for (int i = 0; i < tamanho / 2; i++) {
+            char temp = chars[i];
+            chars[i] = chars[tamanho - 1 - i];
+            chars[tamanho - 1 - i] = temp;
+        }
+
+        String invertido = new String(chars);
+        System.out.println("A string invertida é: " + invertido);
+    }
+}
