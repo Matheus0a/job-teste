@@ -1,0 +1,34 @@
+public class Faturamento {
+    public static void main(String[] args) {
+        // dados de faturamento
+        double[] faturamento = {22174.1664, 24537.6698, 26139.6134, 0.0, 0.0};
+
+        // variáveis para cálculo
+        double menor = faturamento[0];
+        double maior = faturamento[0];
+        double total = 0.0;
+        int count = 0;
+
+        // cálculo do menor valor de faturamento, do maior valor de faturamento e do número de dias com faturamento superior à média mensal
+        for (double valor : faturamento) {
+            if (valor < menor) {
+                menor = valor;
+            }
+            if (valor > maior) {
+                maior = valor;
+            }
+            total += valor;
+        }
+        double media = total / faturamento.length;
+        for (double valor : faturamento) {
+            if (valor > media) {
+                count++;
+            }
+        }
+
+        // exibição dos resultados
+        System.out.println("Menor valor de faturamento: " + menor);
+        System.out.println("Maior valor de faturamento: " + maior);
+        System.out.println("Número de dias com faturamento superior à média mensal: " + count);
+    }
+}
